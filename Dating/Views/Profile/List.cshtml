@@ -1,0 +1,22 @@
+﻿@model List<Profile>
+@using (Html.BeginForm("List", "Profile", FormMethod.Get))
+{
+    <p style="color:black; font-size:14px"> <i>Введите имя:</i></p>
+    <input type="text" name="search" />
+    <p style="color:black; font-size:14px"> <i>Введите возраст:</i></p>
+    <input type="text" name="age" />
+    <input type="submit" value="Искать" />
+}
+<table>
+    @foreach (var profile in Model)
+    {
+    <tr>
+        <td>@profile.FirstName</td>
+        <td>@profile.LastName</td>
+        <td>@profile.Age</td>
+        @*<td><a href="/Profile/Index/@profile.Id">View</a></td>*@
+        <td><p><a class="btn btn-warning" href="/Profile/Index/@profile.Id">Показать</a></p></td>
+    </tr>
+    }
+</table>
+

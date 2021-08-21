@@ -1,0 +1,31 @@
+﻿@model Profile
+@using (Html.BeginForm("Create", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <p style="color:black; font-size:14px"> Имя:</p> @Html.TextBoxFor(m => m.FirstName)
+    <br />
+
+    <p style="color:black; font-size:14px"> Фамилия:</p> @Html.TextBoxFor(m => m.LastName)
+    <br />
+    <p style="color:black; font-size:14px"> Возраст:</p> @Html.TextBoxFor(m => m.Age)
+    <br />
+    <br />
+    <p style="color:black; font-size:14px"> Пол:</p>
+
+    @Html.DropDownListFor(m => m.Sex, Enum.GetNames(typeof(Dating.Enums.Sex)).Select(e => new SelectListItem { Value = e, Text = e }))
+    <br />
+    <br />
+    <p style="color:black; font-size:14px"> Ориентация:</p>
+
+    @Html.DropDownListFor(m => m.SexualOrientation, Enum.GetNames(typeof(Dating.Enums.SexualOrientations)).Select(e => new SelectListItem { Value = e, Text = e }))
+    <br />
+    <br />
+    <p style="color:black; font-size:14px"> О себе:</p> @Html.TextBoxFor(m => m.AboutMe)
+    <br />
+    <p style="color:black; font-size:14px"> Фото:</p>
+                                
+    <input type="file" id="Upload" name="Upload"  />
+    <br />
+    <input type="submit" value="Отправить" />
+}
+

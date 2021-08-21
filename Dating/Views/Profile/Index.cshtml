@@ -1,0 +1,12 @@
+﻿@model Profile
+
+        <img src="data:image/jpeg;base64, @Model.Image"  align="right" width="400" hspace="10" vspace="10" /><h2>Профиль</h2>
+        <hr> @Model.FirstName  @Model.LastName , @Model.Age
+        <hr>
+        <hr> <p style="color:black; font-size:14px"><i>Пол:</p> @Model.Sex
+        <hr>
+        <p style="color:black; font-size:14px"> <i>О себе:</i></p>  @Model.AboutMe
+        <hr>
+        <p style="color:black; font-size:14px"> <i>Ориентация:</i></p>
+        <div>@Model.SexualOrientation</div>
+
